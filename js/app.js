@@ -190,7 +190,7 @@
    * using the Function prototype method: bind
    * to set the context to the btn12 object
    */
-  const setLight12Class = setMyLightClass.bind(btn12, null, "light-green");
+  const setLight12Class = setMyLightClass.bind(btn12);
   /*
    * Add a click event listener to btn12
    * the handler method will be an anonymous function expression
@@ -225,8 +225,11 @@
    * that is the result of invoking the Function prototype method, bind
    * on the setMyLightGreen function
    */
-  setMyLightGreen.bind(btn14, null, "light-green");
-  btn14.addEventListener("click", setMyLightGreen);
+
+  btn14.addEventListener(
+    "click",
+    setMyLightGreen.bind(btn14, null, "light-green")
+  );
   /*
    * Add a click event listener to btn15
    * Using just one function invocation and the Function prototype method, bind
